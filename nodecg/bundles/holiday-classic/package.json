@@ -1,7 +1,7 @@
 {
-  "name": "team-select",
+  "name": "holiday-classic",
   "version": "0.0.0",
-  "description": "select teams to showcase across all graphics",
+  "description": "bundle for holiday-classic tournament",
   "homepage": "",
   "author": {
     "name": "anthonyqsun",
@@ -24,9 +24,18 @@
       {
         "name": "team-select",
         "title": "Team Select",
-        "width": 2,
+        "width": 4,
         "file": "team-select.html",
-        "headerColor": "#2453ab"
+        "headerColor": "#2453ab",
+        "workspace": "Global controls"
+      },
+      {
+        "name": "map-list",
+        "title": "Map List",
+        "width": 4,
+        "file": "map-list.html",
+        "headerColor": "#2453ab",
+        "workspace": "Global controls"
       }
     ]
   },
