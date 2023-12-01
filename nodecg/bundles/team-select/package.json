@@ -1,0 +1,46 @@
+{
+  "name": "team-select",
+  "version": "0.0.0",
+  "description": "select teams to showcase across all graphics",
+  "homepage": "",
+  "author": {
+    "name": "anthonyqsun",
+    "email": "anthonyqsun@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "general",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "dashboardPanels": [
+      {
+        "name": "team-select",
+        "title": "Team Select",
+        "width": 2,
+        "file": "team-select.html",
+        "headerColor": "#2453ab"
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "MIT"
+}
