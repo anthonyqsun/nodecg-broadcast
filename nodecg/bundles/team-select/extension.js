@@ -9,7 +9,7 @@ class Player {
 }
 
 // TEAM DEFINITIONS
-teams = {
+let teams = {
     "alpha": [
         new Player("a-alpha", "they/them", "offense", ""),
         new Player("b-alpha", "they/them", "offense", ""),
