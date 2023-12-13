@@ -1,5 +1,6 @@
 const left = document.querySelector('#left-drop');
 const right = document.querySelector('#right-drop');
+const scores = document.querySelector("#scores");
 
 const leftRep = nodecg.Replicant("left");
 const rightRep = nodecg.Replicant("right");
@@ -18,6 +19,25 @@ window.onload = ()=>{
 };
 
 submitButton.onclick = () => {
-    leftRep.value = left.value;
-    rightRep.value = right.value;
+    leftRep.value = {name: left.value, score:0};
+    rightRep.value = {name: right.value, score:0};
+
+    scores.innerHTML="";
+    const leftScore = document.createElement("button");
+    const rightScore = document.createElement("button");
+    leftScore.innerHTML = left.value+": 0";
+    rightScore.innerHTML = right.value+": 0";
+    scores.append(leftScore);
+    scores.append(rightScore);
+    NodeCG.waitForReplicants(leftRep, rightRep).then(() => {
+        leftScore.onclick = () =>{
+            leftScore.innerHTML = left.value+": "+ (++leftRep.value["score"]);
+        };
+        rightScore.onclick = () =>{
+            rightScore.innerHTML = right.value+": "+ (++rightRep.value["score"]);
+        };
+
+    });
+
+
 }

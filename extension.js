@@ -77,8 +77,10 @@ module.exports = function (nodecg) {
     mapRep.value = allMaps;
 
     // OTHER REPLICANT INITIALIZATIONS
-    nodecg.Replicant("left");
-    nodecg.Replicant("right");
-    nodecg.Replicant("currentMaps");
+    nodecg.Replicant("left"); // {name: left.value, score:0};
+    nodecg.Replicant("right"); // {name: right.value, score:0};
+    nodecg.Replicant("currentMaps"); // {maps: currentMaps, index: 0}
+    nodecg.Replicant("caster1"); // {name: name1.value, twitter: twitter1.value}
+    nodecg.Replicant("caster2"); // {name: name2.value, twitter: twitter2.value}
 }
 

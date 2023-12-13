@@ -6,7 +6,7 @@
   "author": {
     "name": "anthonyqsun",
     "email": "anthonyqsun@gmail.com",
-    "url": ""
+    "url": "https://anthonyqsun.com"
   },
   "files": [
     "dashboard",
@@ -36,6 +36,14 @@
         "file": "map-list.html",
         "headerColor": "#2453ab",
         "workspace": "Global controls"
+      },
+      {
+        "name": "casters",
+        "title": "Casters",
+        "width": 4,
+        "file": "casters.html",
+        "headerColor": "#24ab3a",
+        "workspace": "overlays"
       }
     ]
   },
