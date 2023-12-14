@@ -1,0 +1,131 @@
+<html>
+<link href="https://fonts.cdnfonts.com/css/made-mirage" rel="stylesheet">
+
+<section class="back_green">
+    <!-- height 212 -->
+    <div style="padding: 36px 100px" class="grid heading_grid"> 
+        <img src="assets/HC_2023_Logo.png" height="140px">
+        <h1 id="team_name">Waffle</h1>
+    </div>
+</section>
+
+<section id="heroes">
+
+</section>
+
+<section class="back_green bottom">
+<div id="players_info" class="grid player_grid">
+    <div class="grid_containers">
+        <h2 class="player_name" style="padding-bottom: 32px;">Temp</h2>
+        <img src="assets/DPS.png">
+    </div>
+    <div class="grid_containers">
+        <h2 class="player_name" style="padding-bottom: 32px;">Temp</h2>
+        <img src="assets/DPS.png">
+    </div>
+    <div class="grid_containers">
+        <h2 class="player_name" style="padding-bottom: 32px;">Temp</h2>
+        <img src="assets/Tank.png">
+    </div>
+    <div class="grid_containers">
+        <h2 class="player_name" style="padding-bottom: 32px;">Temp</h2>
+        <img src="assets/Support.png">
+    </div>
+    <div class="grid_containers">
+        <h2 class="player_name" style="padding-bottom: 32px;">Temp</h2>
+        <img src="assets/Support.png">
+    </div>
+    
+</div>
+<div id="sponsors"></div>
+</section>
+
+<style>
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.grid_containers {
+    width:200px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.player_grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding-left: 140px;
+    /* justify-content: space-around; */
+}
+
+html {
+    height:1080px;
+    width:1920px;
+}
+
+#heroes {
+    height:496px;
+}
+
+#players_info {
+    height: 252px;
+}
+
+#sponsors {
+    /* margin-left: auto;
+    margin-right: auto; */
+    height:80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.bottom {
+    z-index: 999;
+}
+
+.back_green {
+    background-color: #204900;
+}
+
+.grid {
+    display: grid;
+}
+
+.heading_grid {
+    grid-template-columns: 400px 1fr;
+    align-items: center;
+}
+
+#team_name {
+    font-family: 'MADE Mirage', sans-serif;
+    font-size: 90px;
+    color: white;
+}
+
+.player_name {
+    font-family: 'MADE Mirage', sans-serif;
+    font-size: 52px;
+    color:white;
+    overflow: hidden;
+    white-space: nowrap;
+}
+</style>
+
+<script>
+    const teamDisplayRep = nodecg.Replicant("teamDisplay");
+    NodeCG.waitForReplicants(teamDisplayRep).then(() => {
+        const team_name = document.getElementById("team_name");
+        team_name.innerHTML = teamDisplayRep.value[0];
+        const elements = document.getElementsByClassName("player_name");
+        for(let i in teamDisplayRep.value[1]) {
+            elements[i].innerHTML = teamDisplayRep.value[1][i].name;
+        }
+        
+    });
+
+</script>
+
+</html>

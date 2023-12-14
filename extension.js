@@ -80,6 +80,7 @@ module.exports = function (nodecg) {
     historyRep.value = [];
 
     // OTHER REPLICANT INITIALIZATIONS
+    nodecg.Replicant("teamDisplay");
     nodecg.Replicant("left"); // {name: left.value, score:0};
     nodecg.Replicant("right"); // {name: right.value, score:0};
     nodecg.Replicant("currentMaps"); // {maps: currentMaps, index: 0}

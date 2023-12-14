@@ -1,0 +1,121 @@
+
+<html>
+<link href="https://fonts.cdnfonts.com/css/made-mirage" rel="stylesheet">
+
+<div class="flex">
+<img src="assets/HC_2023_Logo.png" id="hc_logo" width="290px">
+<div class="grid two-grid">
+    <div class="caster back_green flex_col">
+        <h2 class="name" id="n1">Caster Name</h2>
+        <h3 class="twitter" id="t1">@twitter</h3>
+    </div>
+    <div class="caster back_green flex_col">
+        <h2 class="name" id="n2">Caster Name</h2>
+        <h3 class="twitter" id="t2">@twitter</h3>
+    </div>
+</div>
+</div>
+
+
+<style>
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.name {
+    font-family: 'MADE Mirage', sans-serif;
+    font-size: 52px;
+    color:white;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.twitter {
+    font-family: 'MADE Mirage', sans-serif;
+    font-size: 36px;
+    color:white;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.caster{
+    width: 850px;
+    height: 630px;
+    margin-top:90px;
+}
+
+.two-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 64px;
+}
+
+#hc_logo {
+    position: absolute;
+    left:815px;
+    top:64px;
+}
+
+html {
+    height:1080px;
+    width:1920px;
+}
+
+.flex {
+    display:flex;
+    justify-content: center;
+    height:100%;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.flex_col {
+    display:flex;
+    align-items: center;
+    justify-content:flex-end;
+    flex-direction: column;
+}
+
+.back_green {
+    background-color: #204900;
+}
+
+.grid {
+    display: grid;
+}
+
+.heading_grid {
+    grid-template-columns: 400px 1fr;
+    align-items: center;
+}
+
+#team_name {
+    font-family: 'MADE Mirage', sans-serif;
+    font-size: 90px;
+    color: white;
+}
+
+
+</style>
+
+<script>
+    const c1 = nodecg.Replicant("caster1"); // {name: name1.value, twitter: twitter1.value}
+    const c2 = nodecg.Replicant("caster2");
+    NodeCG.waitForReplicants(c1,c2).then(() => {
+        const n1 = document.getElementById("n1");
+        const t1 = document.getElementById("t1");
+        const n2 = document.getElementById("n2");
+        const t2 = document.getElementById("t2");
+
+        n1.innerHTML = c1.value['name'];
+        t1.innerHTML = c1.value['twitter'];
+        n2.innerHTML = c2.value['name'];
+        t2.innerHTML = c2.value['twitter'];
+        
+    });
+
+</script>
+
+</html>

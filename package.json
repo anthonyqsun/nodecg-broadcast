@@ -42,8 +42,31 @@
         "title": "Casters",
         "width": 4,
         "file": "casters.html",
-        "headerColor": "#2453ab",
-        "workspace": "Global controls"
+        "headerColor": "#204900",
+        "workspace": "Screen"
+      },
+      {
+        "name": "team-disp",
+        "title": "Team Display",
+        "width": 4,
+        "file": "team-disp.html",
+        "headerColor": "#204900",
+        "workspace": "Screen"
+      }
+      
+    ],
+    "graphics": [
+      {
+        "file": "teams.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "caster-disp.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
       }
     ]
   },
