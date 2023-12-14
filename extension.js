@@ -4,68 +4,94 @@ class Player {
         this.name = name;
         this.pronouns = pronouns;
         this.classID = classID;
-        this.imgFile = imgFile;
     }
 }
 
 let allMaps = {
     "control": {
-        "Busan": "FILE/LOCATION",
+        "TBD": "TBD_control.png",
+        "Lijiang Tower": "Lijiang_Tower.png",
+        "Busan": "Busan.png",
+        "Nepal": "Nepal.png",
+        "Antarctic Peninsula": "Antarctic_Peninsula.png",
     },
     "escort": {
-        "Circuit Royal": "FILE/LOCATION",
+        "TBD": "TBD_escort.png",
+        "Dorado": "Dorado.png",
+        "Shambali Monastery": "Shambali.png",
+        "Route 66": "Route_66.png",
+        "Rialto": "Rialto.png",
     },
     "hybrid": {
-        "Blizzard World": "FILE/LOCATION",
+        "TBD": "TBD_hybrid.png",
+        "Blizzard World": "Blizzard_World.png",
+        "King’s Row": "King's_Row.png",
+        "Midtown": "Midtown.png",
+        "Numbani": "Numbani.png",
     },
     "push": {
-        "Colosseo": "FILE/LOCATION",
+        "TBD": "TBD_push.png",
+        "New Queen Street": "New_Queen_Street.png",
+        "Colosseo": "Colosseo.png",
+        "Esperanca": "Esperanca.png",
+    },
+    "flashpoint": {
+        "TBD": "TBD_flashpoint.png",
+        "New Junk City": "New_Junk_City.png",
+        "Suravasa": "Suravasa.png",
     }
 }
 
 // TEAM DEFINITIONS
 let teams = {
-    "Alpha": [
-        new Player("a-alpha", "they/them", "offense", ""),
-        new Player("b-alpha", "they/them", "offense", ""),
-        new Player("c-alpha", "they/them", "tank", ""),
-        new Player("d-alpha", "they/them", "support", ""),
-        new Player("e-alpha", "they/them", "support", ""),
+    "Washington Waff1ers": [
+        new Player("Astrophobe", "offense"),
+        new Player("Ghillie", "offense"),
+        new Player("Omnic", "tank"),
+        new Player("Interflux", "support"),
+        new Player("Mika", "support"),
     ],
-    "Bravo": [
-        new Player("a-bravo", "they/them", "offense", ""),
-        new Player("b-bravo", "they/them", "offense", ""),
-        new Player("c-bravo", "they/them", "tank", ""),
-        new Player("d-bravo", "they/them", "support", ""),
-        new Player("e-bravo", "they/them", "support", ""),
+    "Cute Cats From Portugal": [
+        new Player("Boto", "offense"),
+        new Player("Yoon", "offense"),
+        new Player("Keegan", "tank"),
+        new Player("Fite", "support"),
+        new Player("Jack", "support"),
     ],
-    "Charlie": [
-        new Player("a-charlie", "they/them", "offense", ""),
-        new Player("b-charlie", "they/them", "offense", ""),
-        new Player("c-charlie", "they/them", "tank", ""),
-        new Player("d-charlie", "they/them", "support", ""),
-        new Player("e-charlie", "they/them", "support", ""),
+    "Pilkers": [
+        new Player("Beemer", "offense"),
+        new Player("Rogue", "offense"),
+        new Player("DXHyperKnight", "tank"),
+        new Player("Saya", "support"),
+        new Player("zeo", "support"),
     ],
-    "Delta": [
-        new Player("a-delta", "they/them", "offense", ""),
-        new Player("b-delta", "they/them", "offense", ""),
-        new Player("c-delta", "they/them", "tank", ""),
-        new Player("d-delta", "they/them", "support", ""),
-        new Player("e-delta", "they/them", "support", ""),
+    "DantehFanFans": [
+        new Player("Scout", "offense"),
+        new Player("Toasty", "offense"),
+        new Player("DantehFanFan", "tank"),
+        new Player("Paydin", "support"),
+        new Player("VTag", "support"),
     ],
-    "Echo": [
-        new Player("a-echo", "they/them", "offense", ""),
-        new Player("b-echo", "they/them", "offense", ""),
-        new Player("c-echo", "they/them", "tank", ""),
-        new Player("d-echo", "they/them", "support", ""),
-        new Player("e-echo", "they/them", "support", ""),
+    "Soapbox Dominators": [
+        new Player("Mustard", "offense"),
+        new Player("Ysontay", "offense"),
+        new Player("BaccaCat", "tank"),
+        new Player("Danny", "support"),
+        new Player("Mazoku", "support"),
     ],
-    "Foxtrot": [
-        new Player("a-foxtrot", "they/them", "offense", ""),
-        new Player("b-foxtrot", "they/them", "offense", ""),
-        new Player("c-foxtrot", "they/them", "tank", ""),
-        new Player("d-foxtrot", "they/them", "support", ""),
-        new Player("e-foxtrot", "they/them", "support", ""),
+    "Heart Pirates": [
+        new Player("Casey", "offense"),
+        new Player("Mexicant", "offense"),
+        new Player("Astaroth420", "tank"),
+        new Player("Art3mis", "support"),
+        new Player("John", "support"),
+    ],
+    "GET SOME": [
+        new Player("Awpi", "offense"),
+        new Player("EggJakey", "offense"),
+        new Player("Chris", "tank"),
+        new Player("Fancy", "support"),
+        new Player("Joshua404", "support"),
     ],
 }
 
@@ -75,9 +101,6 @@ module.exports = function (nodecg) {
 
     const mapRep = nodecg.Replicant("allMaps");
     mapRep.value = allMaps;
-
-    const historyRep = nodecg.Replicant("history"); // [{left: leftTeam, right:rightTeam, score:"a:b"},]
-    historyRep.value = [];
 
     // OTHER REPLICANT INITIALIZATIONS
     nodecg.Replicant("teamDisplay");

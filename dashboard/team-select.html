@@ -4,21 +4,36 @@
 		<meta charset="UTF-8" />
 		
 	</head>
+	<script>
+	function disableSwap() {
+		document.getElementById("swapButton").setAttribute("style", "display:none");
+	}
+	</script>
 	<body>
 		<!-- Team dropdown 1 -->
 		<label>Choose Left Team</label>
-		<select id="left-drop"></select>
+		<select id="left-drop" onchange="disableSwap()"></select>
 
 		<br>
 		
 		<!-- Team dropdown 2 -->
 		<label>Choose Right Team</label>
-		<select id="right-drop"></select>
+		<select id="right-drop" onchange="disableSwap()"></select>
 		
 		<br>
-		
-		<button id="submitButton">Make scoreboard</button>
-		<div id="scores"></div>
+
+		<label>Left Score</label>
+		<input type="text" id="left_score" value=0 onchange="disableSwap()">
+
+		<br>
+
+		<label>Right Score</label>
+		<input type="text" id="right_score" value=0 onchange="disableSwap()">
+
+		<br>
+
+		<button id="submitButton">Update</button>
+		<button id="swapButton" style="display:none">Swap & Update</button>
 
 		<script type="module" src="./team-select.js"></script>
 	</body>
