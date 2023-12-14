@@ -76,6 +76,9 @@ module.exports = function (nodecg) {
     const mapRep = nodecg.Replicant("allMaps");
     mapRep.value = allMaps;
 
+    const historyRep = nodecg.Replicant("history"); // [{left: leftTeam, right:rightTeam, score:"a:b"},]
+    historyRep.value = [];
+
     // OTHER REPLICANT INITIALIZATIONS
     nodecg.Replicant("left"); // {name: left.value, score:0};
     nodecg.Replicant("right"); // {name: right.value, score:0};

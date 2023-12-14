@@ -42,8 +42,8 @@
         "title": "Casters",
         "width": 4,
         "file": "casters.html",
-        "headerColor": "#24ab3a",
-        "workspace": "overlays"
+        "headerColor": "#2453ab",
+        "workspace": "Global controls"
       }
     ]
   },
