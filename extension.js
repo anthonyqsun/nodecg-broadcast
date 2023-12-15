@@ -1,6 +1,6 @@
 
 class Player {
-    constructor(name, pronouns, classID, imgFile) {
+    constructor(name, pronouns, classID) {
         this.name = name;
         this.pronouns = pronouns;
         this.classID = classID;
@@ -12,7 +12,7 @@ let allMaps = {
         "TBD": "TBD_control.png",
         "Lijiang Tower": "Lijiang_Tower.png",
         "Busan": "Busan.png",
-        "Nepal": "Nepal.png",
+        "Nepal": "Nepal.jpg",
         "Antarctic Peninsula": "Antarctic_Peninsula.png",
     },
     "escort": {
@@ -31,7 +31,7 @@ let allMaps = {
     },
     "push": {
         "TBD": "TBD_push.png",
-        "New Queen Street": "New_Queen_Street.png",
+        "New Queen Street": "New_Queen_Street.jpg",
         "Colosseo": "Colosseo.png",
         "Esperanca": "Esperanca.png",
     },
@@ -109,5 +109,12 @@ module.exports = function (nodecg) {
     nodecg.Replicant("currentMaps"); // {maps: currentMaps, index: 0}
     nodecg.Replicant("caster1"); // {name: name1.value, twitter: twitter1.value}
     nodecg.Replicant("caster2"); // {name: name2.value, twitter: twitter2.value}
+
+    nodecg.Replicant("centerInput");
+    // all tuples
+    nodecg.Replicant("topInput");
+    nodecg.Replicant("colorInput");
+    nodecg.Replicant("teamScoreInput");
+    nodecg.Replicant("iconInput");
 }
 

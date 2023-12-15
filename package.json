@@ -52,6 +52,14 @@
         "file": "team-disp.html",
         "headerColor": "#204900",
         "workspace": "Screen"
+      },
+      {
+        "name": "game-overlay",
+        "title": "Game Overlay",
+        "width": 8,
+        "file": "goverlay.html",
+        "headerColor": "#204900",
+        "workspace": "Screen"
       }
       
     ],
@@ -64,6 +72,12 @@
       },
       {
         "file": "caster-disp.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "game-overlay.html",
         "width": 1920,
         "height": 1080,
         "singleInstance": false

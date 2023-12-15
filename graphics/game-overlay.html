@@ -1,0 +1,237 @@
+<html>
+<link href="https://fonts.cdnfonts.com/css/made-mirage" rel="stylesheet">
+
+
+<div class="flex f-center blue">
+
+    <h3 id="centerTextInput">MAP 1 - FIRST TO 2</h3>
+</div>
+
+<div id="topleft">
+    <div class="subheading" style="margin-right:60px; text-align: right;">
+        <p id="leftInput">Current: Oasis | Next: King's Row</p>
+    </div>
+    <div class="grid left-grid">
+        <div class="flex f-center align-center" id="leftColorInput" style="background-color: #204900;">
+            <h3 class="team-score" id="leftTeamScoreInput">1-0</h3>
+            <h2 id="team-name-left"><span style="font-weight: lighter">THE</span> ARCANE</h2>
+            <img style="margin: 0 20px 0 20px" id="leftLogoInput" src="assets/teamlogos/Washington Waff1ers.png" height="48px">
+        </div>
+
+        <div class="flex f-center"><h2 class="score" id="leftScoreInput">0</h2></div>
+        <div class="position-icon flex f-center align-center"><img id="leftIconInput" src="assets/attack.png" width="70%"></div>
+    </div>
+</div>
+
+<div id="topright">
+    <div class="subheading" style="margin-left:60px">
+        <p id="rightInput">ARC X HOLIDAY CLASSIC</p>
+    </div>
+    <div class="grid right-grid">
+        <div class="position-icon flex f-center align-center"><img id="rightIconInput" src="assets/defend.png" width="70%"></div>
+        <div class="flex f-center"><h2 class="score" id="rightScoreInput">0</h2></div>
+
+        <div class="flex f-center align-center" id="rightColorInput" style="background-color: #204900;"">
+            <img style="margin: 0 20px 0 20px" id="rightLogoInput" src="assets/teamlogos/Washington Waff1ers.png" height="48px">
+            <h2 id="team-name-right"><span style="font-weight: lighter">THE</span> ARCANE</h2>
+            <h3 class="team-score" id="rightTeamScoreInput">1-0</h3>
+        </div>
+    </div>
+</div>
+
+<style>
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#team-name-left {
+    margin-left:auto;
+    font-size: 30px;
+}
+
+#team-name-right {
+    margin-right:auto;
+    font-size: 30px;
+}
+
+.team-score {
+    font-size: 24px;
+    padding-left: 20px;
+    flex-basis: 60px;
+}
+
+.score {
+    background-color: white;
+    opacity: 100%;
+    color:black;
+    font-size: 40px;
+    width:100%;
+    text-align: center;
+}
+
+.position-icon {
+    background-color: black;
+    width: 100%;
+
+}
+
+.subheading {
+    font-size: 28px;
+    padding: 8px 20px;
+    background-color: #616161;
+    opacity:75%;
+}
+
+#topleft {
+    position:absolute;
+    top:0%;
+    left:0%;
+    width: 620px;
+}
+
+#topright {
+    position:absolute;
+    top:0%;
+    left: 1300px;
+    float:right;
+    width: 620px;
+}
+
+.left-grid {
+    grid-template-columns: 1fr 60px 60px;
+    margin-top: 12px;
+}
+
+.right-grid {
+    grid-template-columns: 60px 60px 1fr;
+    margin-top: 12px;  
+}
+
+#centerTextInput {
+    font-size: 28px;
+    margin-top: 20px;
+    padding: 16px;
+    background-color: #616161;
+    opacity:75%;
+    border-radius: 16px;
+}
+
+html {
+    height:1080px;
+    width:1920px;
+}
+
+.flex {
+    display: flex;
+    align-items: flex-start;
+}
+
+.f-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.blue {
+    height:100%;
+    background-color: blue;
+}
+
+.back_green {
+    background-color: #204900;
+}
+
+.grid {
+    display: grid;
+}
+
+h1, h2, h3, p {
+    font-family: 'MADE Mirage', sans-serif;
+    color:white;
+}
+
+#heading {
+    font-size: 90px;
+    color: white;
+}
+
+.no_flow_text {
+    font-size: 52px;
+    color:white;
+    overflow: hidden;
+    white-space: nowrap;
+}
+</style>
+
+<script>
+    const centerTextInput = document.querySelector('#centerTextInput');
+    
+    const leftInput = document.querySelector('#leftInput');
+    const leftColorInput = document.querySelector('#leftColorInput');
+    const leftTeamScoreInput = document.querySelector('#leftTeamScoreInput');
+    const teamNameLeft = document.querySelector('#team-name-left');
+    const leftLogoInput = document.querySelector('#leftLogoInput');
+    const leftScoreInput = document.querySelector('#leftScoreInput');
+    const leftIconInput = document.querySelector('#leftIconInput');
+    
+    const rightInput = document.querySelector('#rightInput');
+    const rightColorInput = document.querySelector('#rightColorInput');
+    const rightTeamScoreInput = document.querySelector('#rightTeamScoreInput');
+    const teamNameRight = document.querySelector('#team-name-right');
+    const rightLogoInput = document.querySelector('#rightLogoInput');
+    const rightScoreInput = document.querySelector('#rightScoreInput');
+    const rightIconInput = document.querySelector('#rightIconInput');
+
+
+
+    const leftTeamRep = nodecg.Replicant("left");
+    const rightTeamRep = nodecg.Replicant("right");
+
+    const centerRep = nodecg.Replicant("centerInput");
+    // all tuples
+    const topInputRep = nodecg.Replicant("topInput");
+    const colorInputRep = nodecg.Replicant("colorInput");
+    const teamScoreInputRep = nodecg.Replicant("teamScoreInput");
+    const iconInputRep = nodecg.Replicant("iconInput");
+
+    function writeSpan(rep) {
+        let name = rep.value['name'];
+        let names=name.split(" ");
+        let priorNames=[];
+        for (let i = 0; i < names.length-1; i++) {
+            priorNames.push(names[i]);
+        }
+        return "<span style=\"font-weight: lighter\">"+priorNames.join(" ")+"</span> "+names[names.length-1];
+    }
+
+    NodeCG.waitForReplicants(leftTeamRep, rightTeamRep, centerRep, topInputRep, colorInputRep, teamScoreInputRep, iconInputRep).then(() => {
+        centerTextInput.innerHTML = centerRep.value;
+        leftInput.innerHTML = topInputRep.value[0];
+        rightInput.innerHTML = topInputRep.value[1];
+
+        leftColorInput.setAttribute("style", "background-color: "+colorInputRep.value[0]);
+        rightColorInput.setAttribute("style", "background-color: "+colorInputRep.value[1]);
+        leftTeamScoreInput.innerHTML = teamScoreInputRep.value[0];
+        rightTeamScoreInput.innerHTML = teamScoreInputRep.value[1];
+        
+        console.log("reached");
+        teamNameLeft.innerHTML = writeSpan(leftTeamRep);
+        teamNameRight.innerHTML = writeSpan(rightTeamRep);
+
+        leftLogoInput.setAttribute("src","assets/teamlogos/"+leftTeamRep.value['name']+".png");
+        rightLogoInput.setAttribute("src","assets/teamlogos/"+rightTeamRep.value['name']+".png");
+
+        leftScoreInput.innerHTML = leftTeamRep.value['score'];
+        rightScoreInput.innerHTML = rightTeamRep.value['score'];
+
+        leftIconInput.setAttribute("src","assets/"+iconInputRep.value[0]+".png");
+        rightIconInput.setAttribute("src","assets/"+iconInputRep.value[1]+".png");
+        
+    });
+
+</script>
+
+</html>
