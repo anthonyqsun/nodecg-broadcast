@@ -1,0 +1,129 @@
+<html>
+<link href="https://fonts.cdnfonts.com/css/made-mirage" rel="stylesheet">
+
+<body>
+    <div class="grid" style="grid-template-columns: 400px 60px 60px 60px 60px 60px 100px">
+        <div style="width:400px;"></div>
+        <div class="headerIcon flexy"><img src="assets/Hybrid.png" height="18px"></div> <!-- EDITABLE -->
+        <div class="headerIcon flexy"><img src="assets/Control.png" height="18px"></div><!-- EDITABLE -->
+        <div class="headerIcon flexy"><img src="assets/FlashPoint.png" height="18px"></div><!-- EDITABLE -->
+        <div class="headerIcon flexy"><img src="assets/Hybrid.png" height="18px"></div><!-- EDITABLE -->
+        <div class="headerIcon flexy"><img src="assets/Hybrid.png" height="18px"></div><!-- EDITABLE -->
+        <h2 style="font-size: 18px; background-color: black; margin:0; padding:2px 0 0 0;" class="flexy">TOTAL</h2>
+        <div class="flexy" style="background-color: #204900; width:400px"> <!-- EDITABLE COLOR -->
+            <img src="assets/teamlogos/Washington Waff1ers.png" style=" height:40px"> <!-- EDITABLE -->
+            <h2 id="leftName">Cute Cats From Portugal</h2> <!-- EDITABLE -->
+        </div>
+        <!-- first row -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy" style="padding:0">0</h3> <!-- EDITABLE TOTAL -->
+        <div class="flexy" width="400px" style="background-color: black; width: 400px"> <!-- EDITABLE COLOR -->
+            <img src="assets/teamlogos/Washington Waff1ers.png" style=" height:40px"> <!-- EDITABLE -->
+            <h2 id="rightName">The Arcane</h2> <!-- EDITABLE -->
+        </div>
+        <!-- second row -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy">-</h3> <!-- EDITABLE -->
+        <h3 class="text flexy" style="padding:0">0</h3> <!-- EDITABLE TOTAL -->
+    </div>
+</body>
+
+<style>
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    position: absolute;
+    top: 820px;
+    left: 80px;
+}
+
+.text {
+    background-color: white;
+    padding-left: 8px;
+}
+
+#leftName, #rightName {
+    margin: auto auto auto 20px;
+}
+
+h3 {
+    font-family: 'MADE Mirage', sans-serif;
+    font-size: 30px;
+    margin: auto 0;
+}
+
+h2 {
+    font-family: 'MADE Mirage', sans-serif;
+    margin: auto 0;
+    color: white;
+    padding: 8px 0;
+    font-size: 24px;
+}
+
+html {
+    height:1080px;
+    width:1920px;
+}
+
+img {
+    margin: auto 0 auto 10px;
+}
+
+.flexy {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.headerIcon {
+    background-color:black;
+}
+
+.back_green {
+    background-color: #204900;
+}
+
+.grid {
+    display: grid;
+}
+
+#heading {
+    font-family: 'MADE Mirage', sans-serif;
+    font-size: 90px;
+    color: white;
+}
+
+.no_flow_text {
+    font-family: 'MADE Mirage', sans-serif;
+    font-size: 52px;
+    color:white;
+    overflow: hidden;
+    white-space: nowrap;
+}
+</style>
+
+<script>
+    const REPLICANT = nodecg.Replicant("teamDisplay");
+    NodeCG.waitForReplicants(REPLICANT).then(() => {
+        const team_name = document.getElementById("team_name");
+        team_name.innerHTML = teamDisplayRep.value[0];
+        const elements = document.getElementsByClassName("player_name");
+        for(let i in teamDisplayRep.value[1]) {
+            elements[i].innerHTML = teamDisplayRep.value[1][i].name;
+        }
+        
+    });
+
+</script>
+
+</html>

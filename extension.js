@@ -116,5 +116,6 @@ module.exports = function (nodecg) {
     nodecg.Replicant("colorInput");
     nodecg.Replicant("teamScoreInput");
     nodecg.Replicant("iconInput");
+    nodecg.Replicant("bestOf");
 }
 
